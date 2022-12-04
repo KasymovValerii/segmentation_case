@@ -5,6 +5,11 @@ from torchvision import transforms
 
 
 class TorchData(Dataset):
+  """
+  Датасет на основе Dataset библиотеки PyTorch.
+  Добавлена возможность извлечения всех данных. Данные нормализуются внутри датасета.
+  """
+
   def __init__(self, images, masks, transform=None):
     self.X = images.type(torch.FloatTensor)
     self.y = masks.type(torch.FloatTensor)

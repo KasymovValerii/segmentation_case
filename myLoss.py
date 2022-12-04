@@ -3,6 +3,12 @@ from torch import nn
 
 
 class DiceLoss(nn.Module):
+    """
+    Реализация функции ошибки Dice.
+
+    ВАЖНО!!!
+    Внутри реализации применяется сигмоидальная функция активации к входным данным inputs.
+    """
     def __init__(self):
         super(DiceLoss, self).__init__()
 

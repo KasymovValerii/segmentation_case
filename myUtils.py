@@ -95,7 +95,12 @@ def plot_learning_step(val_data,
                        epoch,
                        num_epochs,
                        avg_loss,
-                       test_loss):    
+                       test_loss):
+    """
+    Отображение шагов обучения.
+    val_data: валидационная маска
+    pred_data: выход модели
+    """
     clear_output(wait=True)
     plt.figure(figsize=(18, 6))
     for k in range(6):

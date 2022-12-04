@@ -1,3 +1,8 @@
+"""
+Основной pipline работы с данными и обучения
+"""
+
+
 import myUtils
 import myDataset
 import myModel
@@ -23,6 +28,7 @@ def solution(main_dir=None, track=False) -> None:
   dir_images = main_dir + "/subset/subset"
   dir_masks = main_dir + "/subset/subset_masks"
 
+  #Блок чтения и обработки данных
   data_dict = myUtils.read_images(dir_images)
   masks_dict = myUtils.read_masks(dir_masks)
 
@@ -43,6 +49,8 @@ def solution(main_dir=None, track=False) -> None:
                           num_workers=True,
                           shuffle=True,
                           drop_last=True)
+
+  #треккер по умолчанию выключен
   if track:
     wandb.login()
     wandb.init(
@@ -54,13 +62,13 @@ def solution(main_dir=None, track=False) -> None:
         "epochs": 200,
         "time": datetime.datetime.now().strftime("%H:%M:%S")
         })
-
+  #инициализация модели
   device = 'cuda' if torch.cuda.is_available() else 'cpu'
-
   model = myModel.Net()
   optimizer = optim.Adam(model.parameters(), lr=0.001)
   criterion = nn.BCEWithLogitsLoss()
 
+  #Обучение
   dice_loss = train(model=model,
                       trainloader=trainloader,
                       testloader=testloader,
@@ -75,6 +83,7 @@ def solution(main_dir=None, track=False) -> None:
   if track:
     wandb.finish()
 
+  #Отрсиосвка и сохранение графика с метрикой Dice
   epochs = [i + 1 for i in range(len(dice_loss))]
   fig, ax = plt.subplots()
   ax.plot(dice_loss)

@@ -1,6 +1,6 @@
 SimpleITK==2.2.0
 NumPy==1.21.6
-pytorch==1.12.1
+pytorch==1.12.1	
 torchvision==0.13.1
 tqdm==4.64.1
 wandb==0.13.5
