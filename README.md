@@ -34,5 +34,13 @@ solution(dir, track)
 Модель сохраняется на каждой итерации, в которой метрика Dice лучше, чем лучшая за прошлые эпохи в файл **outputs.pickle**.
 Зависимость Dice от эпох записывается в файл **DiceLoss.png**
 
+### Примечание
+Данные после считывания выглядели таким образом:
+![raw_read_data](https://github.com/KasymovValerii/segmentation_case/blob/main/pictures_for_readme/example.png)
+Во время обучения наглядно видно изменения качества предсказаний. На картинке ниже 11 эпоха обучения.
+![image_with_11_epoch](https://github.com/KasymovValerii/segmentation_case/blob/main/pictures_for_readme/11_ep.png)
+На данной изображении уже 63
+![image_with_63_epoch](https://github.com/KasymovValerii/segmentation_case/blob/main/pictures_for_readme/63_ep.png)
+
 ## Лицензия
 MIT
