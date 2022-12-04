@@ -35,13 +35,14 @@ solution(dir, track)
 Зависимость Dice от эпох записывается в файл **DiceLoss.png**
 
 ### Примечание
-Данные после считывания выглядели таким образом:
+* Данные после считывания выглядели таким образом:
 ![raw_read_data](https://github.com/KasymovValerii/segmentation_case/blob/main/pictures_for_readme/example.png)
 Сверху томограммы, снизу их размеченные маски.
 
-Во время обучения наглядно видно изменения качества предсказаний. На картинке ниже 11 эпоха обучения. Сверху - целевые маски, снизу - предсказанные моделью.
+* Во время обучения наглядно видно изменения качества предсказаний. На картинке ниже 11 эпоха обучения. Сверху - целевые маски, снизу - предсказанные моделью.
 ![image_with_11_epoch](https://github.com/KasymovValerii/segmentation_case/blob/main/pictures_for_readme/11_ep.png)
-На данной изображении уже 63
+
+На данном изображении уже 63 эпоха обучения.
 ![image_with_63_epoch](https://github.com/KasymovValerii/segmentation_case/blob/main/pictures_for_readme/63_ep.png)
 
 ## Лицензия
